@@ -1,5 +1,9 @@
 name: Continuous Integration Teste
 on: [push]
+
+permissions:
+  security-events: read
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
