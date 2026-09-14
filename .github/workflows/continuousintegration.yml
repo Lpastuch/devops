@@ -26,3 +26,8 @@ jobs:
         uses: docker/setup-qemu-action@v4
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
+      - name: Build
+        uses: docker/build-push-action@v7
+        with:
+          push: false #se der problema colocar false e comentar os logins ali em cima
+          tags: user/app:latest
