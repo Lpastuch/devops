@@ -1,18 +1,27 @@
-name: Continuous Integration Teste
+name: Continuous Delivery Teste
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - main #só faz quando houver push na main
 
 permissions:
   contents: read
   security-events: write
 
 jobs:
-  build:
+  deliver:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Python Lint Code Scanning Action
         uses: advanced-security/python-lint-code-scanning-action@v1.1.3
+
+      - name: Simulando Continuous Delivery
+        uses: actions/upload-artifact@v7
+        with:
+          name: projetozipado.zip
+          path: |
+            '**.py'
+            README.md
+            
