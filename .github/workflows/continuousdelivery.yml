@@ -51,8 +51,9 @@ jobs:
       #  with:
       #    username: ${{ vars.DOCKERHUB_USERNAME }}
       #    password: ${{ secrets.DOCKERHUB_TOKEN }}
+
       - name: Build and push
         uses: docker/build-push-action@v7
         with:
-          push: false #se der problema colocar false e comentar os logins ali em cima
+          push: true #se der problema colocar false e comentar os logins ali em cima
           tags: user/app:latest
