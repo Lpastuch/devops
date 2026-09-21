@@ -31,3 +31,12 @@ jobs:
         with:
           push: false #se der problema colocar false e comentar os logins ali em cima
           tags: user/app:latest
+
+  discord:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Discord Webhook
+        uses: johnnyhuy/actions-discord-git-webhook@main
+        with:
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
